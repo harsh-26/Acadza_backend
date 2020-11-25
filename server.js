@@ -36,11 +36,16 @@ require('dotenv').config({
       //  console.log(client);
         setInterval(() => {
     // 2. every second, emit a 'cpu' event to user
-        os.cpuUsage(cpuPercent => {
-        client.emit('cpu', {
-        name: tick++,
-        value: cpuPercent
-      });
+      //   os.cpuUsage(cpuPercent => {
+      //   client.emit('cpu', {
+      //   name: tick++,
+      //   value: cpuPercent
+      // });
+          client.emit('cpu',{
+            name : tick++,
+            value : tick++,
+          })
+
     });
   }, 1000);
 });
